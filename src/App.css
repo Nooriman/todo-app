@@ -1,0 +1,15 @@
+.text-pri {
+  color: '#1f1f1f';
+}
+
+.text-sec {
+  color: '#3b3b3b'
+}
+
+.bg-pri {
+  color: '#fcba03';
+}
+
+.text-strong {
+  font-weight: bold;
+}
