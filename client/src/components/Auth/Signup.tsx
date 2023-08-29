@@ -2,7 +2,7 @@ import { CheckBox, Visibility, VisibilityOff } from "@mui/icons-material"
 import { Button, FormControl, FormControlLabel, FormGroup, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
-import './Auth.css';
+import '../../style/Auth.css';
 
 interface signupSchema {
     email: string,

@@ -2,7 +2,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, FormControl, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import HorizontalLineWithText from '../HorizontalLineWithText/HorizontalLineWithText';
-import './Auth.css';
+import '../../style/Auth.css';
 
 interface loginSchema {
     email: string,
