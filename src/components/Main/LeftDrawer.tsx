@@ -5,6 +5,7 @@ import {
   TextField,
   Button,
   List,
+  Grid,
   Typography,
   Divider,
   ListItem,
@@ -36,6 +37,21 @@ interface LeftDrawerProps {
 
 export default function LeftDrawer({ open, onClose }: LeftDrawerProps) {
   const [searchText, setSearchText] = useState<string>("");
+
+  const tagList = [
+    {
+      title: "Tag 1",
+      color: "success",
+    },
+    {
+      title: "Tag 2",
+      color: "error",
+    },
+    {
+      title: "Tag 3",
+      color: "info",
+    },
+  ];
 
   const taskItems = [
     {
@@ -183,17 +199,34 @@ export default function LeftDrawer({ open, onClose }: LeftDrawerProps) {
           TAGS
         </Typography>
 
-        <Chip label="Tag 1" onClick={() => alert("tag 1")} />
-        <Chip label="Tag 2" onClick={() => alert("tag 2")} />
-        <Chip
-          icon={<Add />}
-          label="Add Tag"
-          onClick={() => alert("add new tag")}
-        />
+        <Grid container spacing={1}>
+          {tagList.map((item, idx) => (
+            <Grid item xl={3} key={idx}>
+              <Chip label={item.title} onClick={() => alert(`${item.title}`)} />
+            </Grid>
+          ))}
+          <Grid item xs={4}>
+            <Chip
+              icon={<Add />}
+              label="Add Tag"
+              onClick={() => alert("add new tag")}
+            />
+          </Grid>
+        </Grid>
+
         <Divider />
       </div>
 
-      <div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          left: "20px",
+          width: "calc(100% - 40px)",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <Button onClick={() => alert("open setting")} color="secondary">
           <Tune />
           Setting
